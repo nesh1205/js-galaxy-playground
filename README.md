@@ -69,3 +69,38 @@ js-galaxy-playground/
 │ └── astronaut.glb
 │
 └── README.md
+
+🎯 Purpose
+
+This project was created to showcase:
+
+Frontend Development Skills
+- HTML & CSS Mastery
+- JavaScript Programming
+- UI/UX Design
+- Three.js 3D Graphics
+- Responsive Web Design
+- Interactive User Experiences
+
+🔮 Future Improvements
+- Dark/Light Theme Switcher
+- More JavaScript Mini Apps
+- Advanced 3D Animations
+- Interactive Project Gallery
+- Particle Effects
+- Sound Effects
+- Performance Optimizations
+
+👨‍💻 Author
+
+Thinesh Rama
+
+GitHub:
+https://github.com/nesh1205
+
+Portfolio:
+https://thinesh-portfolio-ten.vercel.app
+
+⭐ Support
+
+If you like this project, consider giving it a star on GitHub.
