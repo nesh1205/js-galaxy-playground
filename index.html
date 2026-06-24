@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JS Galaxy Playground — Frontend Showcase</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===================== PRELOADER ===================== -->
+  <div id="preloader">
+    <div class="preloader-inner">
+      <div class="orbit-loader">
+        <div class="orbit-ring orbit-ring-1"></div>
+        <div class="orbit-ring orbit-ring-2"></div>
+        <div class="orbit-ring orbit-ring-3"></div>
+        <div class="orbit-core"></div>
+      </div>
+      <p id="preloader-text" class="preloader-text">Preparing 3D Experience...</p>
+    </div>
+  </div>
+
+  <!-- ===================== CURSOR GLOW ===================== -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- ===================== AMBIENT BLOBS ===================== -->
+  <div class="blob blob-cyan"></div>
+  <div class="blob blob-magenta"></div>
+  <div class="blob blob-gold"></div>
+
+  <!-- ===================== NAVBAR ===================== -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-bracket">[</span>JS Galaxy<span class="logo-bracket">]</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#stats" class="nav-link">Journey</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#playground" class="nav-link">Playground</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+      <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+        Hire Me
+      </button>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section id="hero" class="hero-section">
+    <div class="hero-container">
+      <div class="hero-left">
+        <p class="hero-eyebrow"><span class="mono">//</span> Frontend Developer & Creative Technologist</p>
+        <h1 class="hero-title">
+          Crafting the<br/>
+          <span class="hero-gradient-text">Digital Universe</span><br/>
+          with <span class="hero-typed-wrapper"><span id="heroTyped" class="hero-typed"></span><span class="typed-cursor">|</span></span>
+        </h1>
+        <p class="hero-subtitle">
+          I build immersive, performant web experiences at the intersection of
+          design, mathematics, and code. Welcome to my galaxy.
+        </p>
+        <div class="hero-cta-group">
+          <a href="#projects" class="btn-primary">View Projects</a>
+          <a href="#playground" class="btn-ghost">Explore Playground</a>
+        </div>
+        <div class="hero-stats-strip">
+          <div class="strip-stat"><span class="strip-num">3+</span><span class="strip-label">Projects</span></div>
+          <div class="strip-divider"></div>
+          <div class="strip-stat"><span class="strip-num">20+</span><span class="strip-label">Technologies</span></div>
+          <div class="strip-divider"></div>
+          <div class="strip-stat"><span class="strip-num">3</span><span class="strip-label">Months of Internship</span></div>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <!-- Three.js canvas will be injected here -->
+        <canvas id="threeCanvas"></canvas>
+        <div class="hero-side-card glass-card">
+          <div class="side-card-badge">
+            <span class="badge-dot"></span>
+            <span class="mono badge-text">LIVE SCENE</span>
+          </div>
+          <p class="side-card-title">Frontend Showcase</p>
+          <p class="side-card-sub">Interactive 3D environment powered by Three.js WebGL renderer with dynamic lighting and particle starfield.</p>
+          <div class="side-card-tags">
+            <span class="tag">Three.js</span>
+            <span class="tag">WebGL</span>
+            <span class="tag">GLSL</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <span class="mono scroll-label">SCROLL</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ===================== STATS ===================== -->
+  <section id="stats" class="stats-section reveal-section">
+    <div class="section-container">
+      <div class="section-label mono">// developer_journey</div>
+      <h2 class="section-title">My Journey <span class="accent-text">in Numbers</span></h2>
+      <div class="stats-grid">
+        <div class="stat-card glass-card reveal-card">
+          <div class="stat-icon">🚀</div>
+          <div class="stat-number" data-target="3" data-suffix="+">0</div>
+          <div class="stat-label">Projects Built</div>
+          <div class="stat-desc">Full-stack & creative web applications</div>
+        </div>
+        <div class="stat-card glass-card reveal-card">
+          <div class="stat-icon">⚡</div>
+          <div class="stat-number" data-target="20" data-suffix="+">0</div>
+          <div class="stat-label">Technologies Learned</div>
+          <div class="stat-desc">Languages, frameworks, and tools</div>
+        </div>
+        <div class="stat-card glass-card reveal-card">
+          <div class="stat-icon">💼</div>
+          <div class="stat-number" data-target="3" data-suffix="">0</div>
+          <div class="stat-label">Months Internship</div>
+          <div class="stat-desc">Real-world professional development</div>
+        </div>
+        <div class="stat-card glass-card reveal-card">
+          <div class="stat-icon">📬</div>
+          <div class="stat-number" data-target="40" data-suffix="+">0</div>
+          <div class="stat-label">Job Applications</div>
+          <div class="stat-desc">Actively seeking opportunities</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SKILLS ===================== -->
+  <section id="skills" class="skills-section reveal-section">
+    <div class="section-container">
+      <div class="section-label mono">// skills_universe</div>
+      <h2 class="section-title">Tech <span class="accent-text">Arsenal</span></h2>
+
+      <div class="skills-grid">
+        <div class="skill-card glass-card reveal-card" data-color="cyan">
+          <div class="skill-icon skill-icon-html">
+            <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 3L8.5 42L25 47L41.5 42L45 3H5Z" fill="#E34F26"/><path d="M25 43.5L38.5 39.8L41.5 8H25V43.5Z" fill="#EF652A"/><path d="M25 20H18.5L18 13.5H25V7H11.5L13 25.5H25V20Z" fill="white"/><path d="M25 34L25.1 34L31.4 32.2L32 25H25.8H25V34Z" fill="white"/><path d="M25 25.5V32L18.9 30.2L18.5 25.5H25Z" fill="#EBEBEB"/><path d="M25 7V13.5H37.8L36.8 25H25V31.9L31.2 30.2L32 22H38.5L37 39.8L25 43.4V7Z" fill="white"/></svg>
+          </div>
+          <h3 class="skill-name">HTML5</h3>
+          <p class="skill-desc">Semantic, accessible markup. The structural foundation of every web experience.</p>
+          <div class="skill-level">
+            <div class="skill-bar"><div class="skill-fill" style="--fill: 95%"></div></div>
+            <span class="mono skill-pct">95%</span>
+          </div>
+        </div>
+
+        <div class="skill-card glass-card reveal-card" data-color="magenta">
+          <div class="skill-icon skill-icon-css">
+            <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 3L8.5 42L25 47L41.5 42L45 3H5Z" fill="#1572B6"/><path d="M25 43.5L38.5 39.8L41.5 8H25V43.5Z" fill="#33A9DC"/><path d="M25 20H18.5L18 13.5H25V7H11.5L13 25.5H25V20Z" fill="white"/><path d="M25 34L31.4 32.2L32 25H25V34Z" fill="white"/><path d="M25 25.5V32L18.9 30.2L18.5 25.5H25Z" fill="#EBEBEB"/><path d="M25 7V13.5H37.8L36.8 25H25V32L31.2 30.2L32 22H38.5L37 39.8L25 43.4V7Z" fill="white"/></svg>
+          </div>
+          <h3 class="skill-name">CSS3</h3>
+          <p class="skill-desc">Animations, glassmorphism, grid systems. CSS is my design language.</p>
+          <div class="skill-level">
+            <div class="skill-bar"><div class="skill-fill" style="--fill: 90%"></div></div>
+            <span class="mono skill-pct">90%</span>
+          </div>
+        </div>
+
+        <div class="skill-card glass-card reveal-card" data-color="gold">
+          <div class="skill-icon skill-icon-js">
+            <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="50" height="50" fill="#F7DF1E"/><path d="M12.7 38.3L16.5 36C17.1 37.2 18.6 38.4 20.6 38.4C22.5 38.4 23.7 37.5 23.7 35.9V20.3H28.5V36C28.5 40.1 26 42.2 20.8 42.2C16.1 42.2 13.5 39.8 12.7 38.3Z" fill="#323330"/><path d="M31.5 37.8L35.3 35.7C36.2 37.2 37.4 38.4 39.6 38.4C41.5 38.4 42.7 37.5 42.7 36.2C42.7 34.6 41.5 34 39.4 33.1L38.2 32.6C34.9 31.2 32.7 29.4 32.7 26C32.7 22.8 35.1 20.4 38.9 20.4C41.6 20.4 43.5 21.4 44.9 23.7L41.3 25.9C40.5 24.5 39.6 23.9 38.9 23.9C38.1 23.9 37.5 24.5 37.5 25.3C37.5 26.3 38.1 26.9 40.1 27.7L41.3 28.2C45.1 29.8 47.3 31.5 47.3 35C47.3 38.8 44.3 41.3 40.2 41.3C36.2 41.3 33.5 39.3 31.5 37.8Z" fill="#323330"/></svg>
+          </div>
+          <h3 class="skill-name">JavaScript</h3>
+          <p class="skill-desc">ES2022+, async/await, DOM manipulation, algorithms, and API integration.</p>
+          <div class="skill-level">
+            <div class="skill-bar"><div class="skill-fill" style="--fill: 88%"></div></div>
+            <span class="mono skill-pct">88%</span>
+          </div>
+        </div>
+
+        <div class="skill-card glass-card reveal-card" data-color="cyan">
+          <div class="skill-icon skill-icon-three">
+            <svg viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg"><polygon points="25,5 45,40 5,40" fill="none" stroke="#00eaff" stroke-width="2"/><polygon points="25,13 38,37 12,37" fill="none" stroke="#00eaff" stroke-width="1.5" opacity="0.6"/><circle cx="25" cy="25" r="3" fill="#00eaff"/></svg>
+          </div>
+          <h3 class="skill-name">Three.js</h3>
+          <p class="skill-desc">WebGL 3D scenes, particle systems, GLTF models, and real-time shaders.</p>
+          <div class="skill-level">
+            <div class="skill-bar"><div class="skill-fill" style="--fill: 75%"></div></div>
+            <span class="mono skill-pct">75%</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Orbit System -->
+      <div class="orbit-system reveal-section">
+        <div class="orbit-label-top mono">// skills_orbit_system</div>
+        <div class="orbit-container">
+          <div class="orbit-ring-system">
+            <div class="orbit-track orbit-track-1">
+              <span class="orbit-tag orbit-tag-html">HTML</span>
+            </div>
+            <div class="orbit-track orbit-track-2">
+              <span class="orbit-tag orbit-tag-css">CSS</span>
+            </div>
+            <div class="orbit-track orbit-track-3">
+              <span class="orbit-tag orbit-tag-js">JS</span>
+            </div>
+            <div class="orbit-track orbit-track-4">
+              <span class="orbit-tag orbit-tag-three">Three.js</span>
+            </div>
+            <div class="orbit-core-sphere">
+              <span class="orbit-core-label">Frontend</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PLAYGROUND ===================== -->
+  <section id="playground" class="playground-section reveal-section">
+    <div class="section-container">
+      <div class="section-label mono">// js_playground</div>
+      <h2 class="section-title">JavaScript <span class="accent-text">Mini-Apps</span></h2>
+      <p class="section-sub">Real programmatic logic. No frameworks. Pure vanilla JS.</p>
+
+      <div class="playground-grid">
+
+        <!-- Calculator -->
+        <div class="playground-card glass-card reveal-card">
+          <div class="playground-card-header">
+            <span class="playground-icon">🧮</span>
+            <div>
+              <h3 class="playground-card-title">Calculator</h3>
+              <p class="mono playground-card-mono">DOM + Event Listeners</p>
+            </div>
+          </div>
+          <div class="calc-body">
+            <div class="calc-row">
+              <input type="number" id="calcA" class="calc-input" placeholder="First number" />
+              <select id="calcOp" class="calc-select">
+                <option value="+">＋</option>
+                <option value="-">－</option>
+                <option value="*">×</option>
+                <option value="/">÷</option>
+              </select>
+              <input type="number" id="calcB" class="calc-input" placeholder="Second number" />
+            </div>
+            <button id="calcBtn" class="playground-btn">Calculate</button>
+            <div id="calcResult" class="calc-result" aria-live="polite">Result will appear here</div>
+          </div>
+        </div>
+
+        <!-- To-Do App -->
+        <div class="playground-card glass-card reveal-card">
+          <div class="playground-card-header">
+            <span class="playground-icon">📝</span>
+            <div>
+              <h3 class="playground-card-title">To-Do App</h3>
+              <p class="mono playground-card-mono">localStorage + CRUD</p>
+            </div>
+          </div>
+          <div class="todo-body">
+            <div class="todo-input-row">
+              <input type="text" id="todoInput" class="calc-input todo-input" placeholder="Add a new task..." />
+              <button id="todoAddBtn" class="playground-btn todo-add-btn">Add</button>
+            </div>
+            <ul id="todoList" class="todo-list" aria-label="Task list"></ul>
+            <p class="todo-hint mono">// Click task to delete</p>
+          </div>
+        </div>
+
+        <!-- Password Generator -->
+        <div class="playground-card glass-card reveal-card">
+          <div class="playground-card-header">
+            <span class="playground-icon">🔐</span>
+            <div>
+              <h3 class="playground-card-title">Password Generator</h3>
+              <p class="mono playground-card-mono">Crypto API + Randomness</p>
+            </div>
+          </div>
+          <div class="pass-body">
+            <div class="pass-options">
+              <label class="pass-option-label"><input type="checkbox" id="passUpper" checked /> Uppercase</label>
+              <label class="pass-option-label"><input type="checkbox" id="passNumbers" checked /> Numbers</label>
+              <label class="pass-option-label"><input type="checkbox" id="passSpecial" checked /> Symbols</label>
+            </div>
+            <button id="passGenBtn" class="playground-btn">Generate Password</button>
+            <div class="pass-result-wrapper">
+              <div id="passResult" class="pass-result mono" aria-live="polite">••••••••••••</div>
+              <button id="passCopyBtn" class="pass-copy-btn" title="Copy to clipboard">⎘</button>
+            </div>
+            <div id="passMsg" class="pass-msg" aria-live="polite"></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PROJECTS ===================== -->
+  <section id="projects" class="projects-section reveal-section">
+    <div class="section-container">
+      <div class="section-label mono">// featured_projects</div>
+      <h2 class="section-title">Portfolio <span class="accent-text">Projects</span></h2>
+      <p class="section-sub">Flagship builds demonstrating depth across the stack.</p>
+
+      <div class="projects-grid">
+
+        <div class="project-card glass-card reveal-card">
+          <div class="project-card-glow project-glow-cyan"></div>
+          <div class="project-meta">
+            <span class="project-number mono">01</span>
+            <span class="project-status project-status-live">Featured</span>
+          </div>
+          <h3 class="project-title">3D Portfolio Website</h3>
+          <p class="project-desc">
+            A personal branding site built with React, Three.js, and GSAP featuring interactive 3D environments,
+            dynamic camera transitions, and a custom particle engine for an immersive digital identity.
+          </p>
+          <div class="project-tags">
+            <span class="tag tag-cyan">React</span>
+            <span class="tag tag-cyan">Three.js</span>
+            <span class="tag">GSAP</span>
+            <span class="tag">WebGL</span>
+          </div>
+          <a href="https://github.com/nesh1205/thinesh-portfolio.git" target="_blank" rel="noopener" class="project-link-btn">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            View on GitHub
+          </a>
+        </div>
+
+        <div class="project-card glass-card reveal-card">
+          <div class="project-card-glow project-glow-magenta"></div>
+          <div class="project-meta">
+            <span class="project-number mono">02</span>
+            <span class="project-status project-status-ai">AI Powered</span>
+          </div>
+          <h3 class="project-title">AI Scam Detector</h3>
+          <p class="project-desc">
+            Web application that identifies phishing patterns and suspicious URLs using NLP heuristics and external
+            threat intelligence APIs. Provides real-time risk scores with detailed breakdowns.
+          </p>
+          <div class="project-tags">
+            <span class="tag tag-magenta">Python</span>
+            <span class="tag tag-magenta">Flask</span>
+            <span class="tag">NLP</span>
+            <span class="tag">REST API</span>
+          </div>
+          <a href="https://github.com/nesh1205/ai-scam-detector.git" target="_blank" rel="noopener" class="project-link-btn">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            View on GitHub
+          </a>
+        </div>
+
+        <div class="project-card glass-card reveal-card">
+          <div class="project-card-glow project-glow-gold"></div>
+          <div class="project-meta">
+            <span class="project-number mono">03</span>
+            <span class="project-status project-status-cv">Computer Vision</span>
+          </div>
+          <h3 class="project-title">Face Recognition System</h3>
+          <p class="project-desc">
+            Canteen attendance tracker using OpenCV and DeepFace for live facial recognition with a real-time dashboard.
+            Features SQLite logging, Flask backend, and automated meal deduction workflows.
+          </p>
+          <div class="project-tags">
+            <span class="tag tag-gold">OpenCV</span>
+            <span class="tag tag-gold">DeepFace</span>
+            <span class="tag">Flask</span>
+            <span class="tag">SQLite</span>
+          </div>
+          <a href="https://github.com/nesh1205/canteen-face-recognition-system.git" target="_blank" rel="noopener" class="project-link-btn">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            View on GitHub
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACT ===================== -->
+  <section id="contact" class="contact-section reveal-section">
+    <div class="section-container">
+      <div class="section-label mono">// contact_me</div>
+      <h2 class="section-title">Let's <span class="accent-text">Connect</span></h2>
+      <p class="section-sub">Open to internships, freelance work, and full-time roles. Let's build something great.</p>
+
+      <div class="contact-layout">
+        <div class="contact-info reveal-card">
+          <div class="contact-info-item">
+            <span class="contact-icon">📍</span>
+            <div>
+              <p class="contact-info-label mono">Location</p>
+              <p class="contact-info-value">Malaysia</p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <span class="contact-icon">💼</span>
+            <div>
+              <p class="contact-info-label mono">Status</p>
+              <p class="contact-info-value">Open to Work <span class="status-dot-green">●</span></p>
+            </div>
+          </div>
+          <div class="contact-info-item">
+            <span class="contact-icon">🎓</span>
+            <div>
+              <p class="contact-info-label mono">Education</p>
+              <p class="contact-info-value">Software Engineering Diploma</p>
+            </div>
+          </div>
+          <a href="https://github.com/nesh1205" target="_blank" rel="noopener" class="contact-github-btn">
+            <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            GitHub — nesh1205
+          </a>
+        </div>
+
+        <div class="contact-form-wrapper glass-card reveal-card">
+          <div id="formMsg" class="form-msg" aria-live="polite"></div>
+          <div class="form-group">
+            <label for="contactName" class="form-label">Name</label>
+            <input type="text" id="contactName" class="form-input" placeholder="Your full name" autocomplete="name" />
+          </div>
+          <div class="form-group">
+            <label for="contactEmail" class="form-label">Email</label>
+            <input type="email" id="contactEmail" class="form-input" placeholder="your@email.com" autocomplete="email" />
+          </div>
+          <div class="form-group">
+            <label for="contactSubject" class="form-label">Subject</label>
+            <input type="text" id="contactSubject" class="form-input" placeholder="What's this about?" />
+          </div>
+          <div class="form-group">
+            <label for="contactMsg" class="form-label">Message</label>
+            <textarea id="contactMsg" class="form-input form-textarea" placeholder="Tell me about your project or opportunity..." rows="5"></textarea>
+          </div>
+          <button id="contactSendBtn" class="btn-primary btn-full">Send Message</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-logo">JS Galaxy</p>
+      <p class="footer-copy mono">// Built with HTML5 · CSS3 · Vanilla JS · Three.js</p>
+      <p class="footer-copy">© 2026 Thinesh Rama. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- THREE.JS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+
+  <!-- APP SCRIPTS -->
+  <script src="three-scene.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
